@@ -26,6 +26,7 @@ jobs:
         run: |
           cd ./web_app
           docker-compose up -d
+          docker ps
       
       - name: run tests
         run: bash  -x ./web_app/tests.sh
