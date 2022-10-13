@@ -2,6 +2,8 @@
 
 set -e
 
+curl localhost:3000
+
 # curl command - A key that is not found
 missing=$(curl -s -X GET localhost:3000/data/lol | jq .data)
 if ! [[ "${missing}" == "null" ]]; then
