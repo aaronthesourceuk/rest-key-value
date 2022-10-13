@@ -20,7 +20,7 @@ jobs:
           path: ./web_app
       
       - name: install JQ
-        run: sudo apt install jq -y
+        run: sudo apt install jq curl -y
       
       - name: start docker
         run: |
@@ -28,7 +28,7 @@ jobs:
           docker-compose up -d
       
       - name: run tests
-        run: bash ./web_app/tests.sh
+        run: bash  -x ./web_app/tests.sh
       
       
       
