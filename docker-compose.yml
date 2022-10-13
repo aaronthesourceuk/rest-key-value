@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  redis:
+    image: redis
+    container_name: redis
+    command: redis-server
+    network_mode: host
+    restart: always
+  redis-cli:
+    depends_on:
+      - redis
+    image: redis
+    network_mode: host
+    command: redis-cli -h 127.0.0.1 ping
+  web:
+    build: .
+    container_name: web
+    command: npm run start
+    network_mode: host
+    depends_on:
+      - redis
+      - redis-cli
+    restart: always
