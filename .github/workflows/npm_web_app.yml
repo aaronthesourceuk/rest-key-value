@@ -19,8 +19,8 @@ jobs:
         with:
           path: ./web_app
       
-      - name: install JQ
-        run: apt install jq -y
+      #- name: install JQ
+      #  run: apt install jq -y
       
       - name: start docker
         run: |
